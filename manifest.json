@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "SignalScan - Developed by @PARVEZ_MHB",
+  "version": "1.0.0",
+  "description": "Ultra-minimal cinematic 1-minute chart scan and directional indicator. Developed by @PARVEZ_MHB",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "SignalScan - Developed by @PARVEZ_MHB",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://api.binance.com/*",
+    "https://api.twelvedata.com/*",
+    "https://akashqxpro.bdtraderpro.xyz/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/bundle.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/styles.css",
+        "icons/icon16.png",
+        "icons/icon32.png",
+        "icons/icon48.png",
+        "icons/icon128.png",
+        "icons/mhb-logo.jpg"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "commands": {
+    "toggle-scan": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Trigger SignalScan"
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+{
+  "name": "signalscan",
+  "version": "1.0.0",
+  "description": "Ultra-minimal cinematic 1-minute chart scan Chrome extension. Developed by @PARVEZ_MHB",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/indicators.test.js",
+    "build": "node build.js",
+    "generate-icons": "node icons/generate-icons.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "trading",
+    "signals",
+    "candlestick",
+    "canvas-animation"
+  ],
+  "author": "@PARVEZ_MHB",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.25.12"
+  }
+}
