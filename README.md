@@ -174,7 +174,7 @@ npm test
 
 ## 👨‍💻 Developer & Credits
 
-- **Developer:** [@PARVEZ_MHB](https://github.com/PARVEZ_MHB)
+- **Developer:** [parvezrepository](https://github.com/parvezrepository)
 - **Project:** SignalScan (MHB Edition)
 - **Platform:** Google Chrome Extension (Manifest V3)
 
