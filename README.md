@@ -174,7 +174,7 @@ npm test
 
 ## 👨‍💻 Developer & Credits
 
-- **Developer:** [@PARVEZ_MHB](https://github.com/PARVEZ_MHB)
+- **Developer:** [parvezrepository](https://github.com/parvezrepository)
 - **Repository:** [SignalScan-Quotex-extensions](https://github.com/parvezrepository/SignalScan-Quotex-extensions)
 - **Project:** SignalScan (MHB Edition)
 - **Architecture:** Google Chrome Extension (Manifest V3)
