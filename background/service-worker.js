@@ -26,16 +26,39 @@ chrome.runtime.onInstalled.addListener((details) => {
       }
     };
     try {
-      chrome.storage.sync.set(defaults, () => {
-        if (chrome.runtime?.lastError) {
-          try {
-            chrome.storage.local?.set(defaults);
-          } catch (_) {}
-        }
-      });
+      if (chrome.storage?.sync) {
+        chrome.storage.sync.set(defaults, () => {
+          if (chrome.runtime?.lastError) {
+            try {
+              chrome.storage.local?.set(defaults, () => {
+                void chrome.runtime?.lastError;
+              });
+            } catch (_) {}
+          }
+        });
+      } else if (chrome.storage?.local) {
+        chrome.storage.local.set(defaults, () => {
+          void chrome.runtime?.lastError;
+        });
+      }
     } catch (_) {}
   }
 });
+
+/**
+ * Extension Toolbar Action Click
+ */
+if (chrome.action?.onClicked) {
+  chrome.action.onClicked.addListener(async (tab) => {
+    if (tab?.id) {
+      try {
+        chrome.tabs.sendMessage(tab.id, { type: 'TRIGGER_SCAN' }, () => {
+          void chrome.runtime?.lastError;
+        });
+      } catch (_) {}
+    }
+  });
+}
 
 /**
  * Keyboard Shortcut: Alt+S
@@ -44,10 +67,10 @@ chrome.runtime.onInstalled.addListener((details) => {
 chrome.commands.onCommand.addListener(async (command) => {
   if (command === 'toggle-scan') {
     try {
-      const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+      const activeTab = tabs && tabs[0];
       if (activeTab?.id) {
         chrome.tabs.sendMessage(activeTab.id, { type: 'TRIGGER_SCAN' }, () => {
-          // Consumes runtime.lastError safely if tab is not listening
           void chrome.runtime?.lastError;
         });
       }
@@ -61,19 +84,29 @@ chrome.commands.onCommand.addListener(async (command) => {
  */
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request?.type === 'PROXY_FETCH' && request.url) {
+    let responded = false;
     fetch(request.url)
       .then(async (res) => {
         if (!res.ok) {
           throw new Error(`HTTP ${res.status} ${res.statusText}`);
         }
         const data = await res.json();
-        sendResponse({ success: true, data });
+        if (!responded) {
+          responded = true;
+          try {
+            sendResponse({ success: true, data });
+          } catch (_) {}
+        }
       })
       .catch((err) => {
-        sendResponse({ success: false, error: err?.message || 'Network fetch failed' });
+        if (!responded) {
+          responded = true;
+          try {
+            sendResponse({ success: false, error: err?.message || 'Network fetch failed' });
+          } catch (_) {}
+        }
       });
     return true; // Keep message port open for async response
   }
   return false;
 });
-

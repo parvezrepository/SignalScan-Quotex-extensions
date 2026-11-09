@@ -47,13 +47,14 @@ export class QuotexApiProvider {
     if (typeof chrome !== 'undefined' && chrome.runtime?.id && chrome.runtime?.sendMessage) {
       try {
         const bgResponse = await new Promise((resolve) => {
-          chrome.runtime.sendMessage({ type: 'PROXY_FETCH', url }, (res) => {
-            if (chrome.runtime?.lastError) {
-              resolve({ success: false, error: chrome.runtime.lastError.message });
-            } else {
+          try {
+            chrome.runtime.sendMessage({ type: 'PROXY_FETCH', url }, (res) => {
+              void chrome.runtime?.lastError;
               resolve(res || { success: false, error: 'Empty proxy response' });
-            }
-          });
+            });
+          } catch (e) {
+            resolve({ success: false, error: e?.message || 'Proxy dispatch failed' });
+          }
         });
 
         if (bgResponse && bgResponse.success && bgResponse.data) {

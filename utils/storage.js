@@ -53,12 +53,8 @@ export async function loadSettings() {
   return new Promise((resolve) => {
     try {
       area.get(DEFAULT_SETTINGS, (items) => {
-        if (chrome.runtime?.lastError) {
-          console.warn('[SignalScan] Storage error, falling back to defaults:', chrome.runtime.lastError.message);
-          resolve({ ...DEFAULT_SETTINGS });
-        } else {
-          resolve({ ...DEFAULT_SETTINGS, ...items });
-        }
+        void chrome.runtime?.lastError;
+        resolve({ ...DEFAULT_SETTINGS, ...(items || {}) });
       });
     } catch {
       resolve({ ...DEFAULT_SETTINGS });
@@ -86,9 +82,11 @@ export async function saveSettings(patch) {
     try {
       area.set(patch, () => {
         if (chrome.runtime?.lastError) {
-          console.warn('[SignalScan] Storage save warning:', chrome.runtime.lastError.message);
           try {
-            chrome.storage.local?.set(patch, () => resolve());
+            chrome.storage.local?.set(patch, () => {
+              void chrome.runtime?.lastError;
+              resolve();
+            });
           } catch {
             resolve();
           }
@@ -104,7 +102,6 @@ export async function saveSettings(patch) {
 
 /**
  * Load the last 10 scan results from local history.
- * @returns {Promise<Array<{ id: string, pair: string, timestamp: number, direction: 'UP'|'DOWN'|'NEUTRAL', confidence: number, entryPrice: number, exitPrice: number|null, won: boolean|null }>>}
  */
 export async function loadHistory() {
   const localArea = typeof chrome !== 'undefined' && chrome.storage ? chrome.storage.local : null;
@@ -118,9 +115,14 @@ export async function loadHistory() {
   }
 
   return new Promise((resolve) => {
-    localArea.get({ signalscan_history: [] }, (res) => {
-      resolve(res.signalscan_history || []);
-    });
+    try {
+      localArea.get({ signalscan_history: [] }, (res) => {
+        void chrome.runtime?.lastError;
+        resolve(res?.signalscan_history || []);
+      });
+    } catch {
+      resolve([]);
+    }
   });
 }
 
@@ -140,7 +142,14 @@ export async function pushHistory(entry) {
   }
 
   return new Promise((resolve) => {
-    localArea.set({ signalscan_history: updated }, () => resolve(updated));
+    try {
+      localArea.set({ signalscan_history: updated }, () => {
+        void chrome.runtime?.lastError;
+        resolve(updated);
+      });
+    } catch {
+      resolve(updated);
+    }
   });
 }
 
@@ -163,12 +172,20 @@ export async function resolveLastHistoryEntry(exitPrice) {
 
   const localArea = typeof chrome !== 'undefined' && chrome.storage ? chrome.storage.local : null;
   if (!localArea) {
-    localStorage.setItem('signalscan_history', JSON.stringify(history));
+    try {
+      localStorage.setItem('signalscan_history', JSON.stringify(history));
+    } catch {}
     return history;
   }
 
   return new Promise((resolve) => {
-    localArea.set({ signalscan_history: history }, () => resolve(history));
+    try {
+      localArea.set({ signalscan_history: history }, () => {
+        void chrome.runtime?.lastError;
+        resolve(history);
+      });
+    } catch {
+      resolve(history);
+    }
   });
 }
-
