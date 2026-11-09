@@ -18,142 +18,142 @@
 
 ---
 
-## 📖 সারসংক্ষেপ (Overview)
+## 📖 Overview
 
-**SignalScan** হলো একটি উচ্চ-ক্ষমতাসম্পন্ন এবং প্রফেশনাল গুগল ক্রোম এক্সটেনশন (Manifest V3), যা ব্রাউজারের লাইভ ট্রেডিং চার্ট (যেমনঃ Quotex) বিশ্লেষণ করে ১ মিনিটের ক্যান্ডেলস্টিকের জন্য হাই-প্রোবাবিলিটি ডিরেকশনাল সিগন্যাল (CALL / PUT) তৈরি করে।
+**SignalScan** is an ultra-high performance, professional Google Chrome extension (Manifest V3) that inspects and analyzes live trading charts in real time (e.g. on Quotex) to generate institutional-grade 1-minute directional candlestick signals (**CALL / PUT**).
 
-এটি কোনো এলোমেলো সিগন্যাল দেয় না; বরং ৬টি শক্তিশালী টেকনিক্যাল ইন্ডিকেটর এবং প্রাইস অ্যাকশন অ্যালগরিদমের কনসেনসাস (Consensus) নিয়ে রিয়েল-টাইম কনফার্মেশন প্রজেক্ট করে।
-
----
-
-## ✨ প্রধান বৈশিষ্ট্যসমূহ (Key Features)
-
-- 🎯 **Strictly Manual Scan (নো অটো-স্ক্যান):** এক্সটেনশন নিজে নিজে কখনো স্ক্যান করবে না। আপনি যখন স্ক্রিনের **MHB লোগোতে** ক্লিক করবেন বা `Alt+S` চাপবেন, কেবল তখনই স্ক্যান রান হবে।
-- 🔍 **রিয়েল-টাইম অটো অ্যাসেট ডিটেকশন:** Quotex-এ আপনি যে অ্যাসেটেই সুইচ করুন না কেন (`USD/INR (OTC)`, `USD/EGP (OTC)`, `AUD/NZD (OTC)`, `NZD/CAD (OTC)`, ক্রিপ্টো বা স্টক)—এক্সটেনশন স্বয়ংক্রিয়ভাবে তা রাইট অর্ডার প্যানেল থেকে ডিটেক্ট করে নেয়। কোনো ম্যানুয়াল সিলেক্ট করার প্রয়োজন নেই।
-- 🎬 **হলিউড-গ্রেড সিনে-লেজার স্ক্যানার:** চার্টের ওপর দিয়ে অ্যানামরফিক অনুভূমিক ফ্লেয়ারসহ ভলিউমেট্রিক নিয়ন লেজার সুইপ করে এবং লাইভ ক্যান্ডেল লক করে।
-- 🏹 **ডিসপ্লের মাঝখানে ৩ডি কনফার্মেশন অ্যারো:** সিগন্যাল লক হওয়ার পর চার্টের কোনো বাটন না ঢেকে **ডিসপ্লের ঠিক মাঝখানে** বিশাল ৩ডি গ্লোয়িং অ্যারো, কনফার্মেশন পার্সেন্টেজ ও লাইভ কাউন্টডাউন ভেসে ওঠে।
-- ⚙️ **মিনি সেটিংস গিয়ার বাটন:** MHB লোগোর পাশে রয়েছে একটি ছোট গিয়ার বাটন (`⚙`)। এখানে ক্লিক করলে সরাসরি সেটিংস প্যানেল স্লাইড করে ওপেন হবে।
-- 🪟 **সম্পূর্ণ ফ্রিলি ড্র্যাগেবল (Draggable Widget):** লোগো আইকন এবং পপআপ কার্ডটি স্ক্রিনের যেকোনো জায়গায় টেনে নিয়ে রাখা যায়।
-- 🛡️ **Zero CSP Error (ব্যাকগ্রাউন্ড প্রক্সি):** ব্রাউজারের কোনো Content Security Policy (CSP) বাধা ছাড়াই ব্যাকগ্রাউন্ড সার্ভিস ওয়ার্কারের মাধ্যমে লাইভ ক্যান্ডেল ডেটা ফেচ করে।
+Unlike random or lagging signal bots, **SignalScan** computes a mathematical consensus across **6 core technical indicators** and **live price action patterns**, delivering high-probability predictions with zero chart obstruction.
 
 ---
 
-## 🧠 অ্যালগরিদম কনসেনসাস ইঞ্জিন (Scoring Engine)
+## ✨ Key Features
 
-এক্সটেনশনটি নিম্নলিখিত ইন্ডিকেটরগুলোর রিয়েল-টাইম গাণিতিক হিসেব করে সিগন্যাল তৈরি করে:
+- 🎯 **Strictly Manual Scan (No Auto-Scan):** Never triggers unwanted scans. A scan executes only when you click the floating **MHB logo** or press `Alt + S`.
+- 🔍 **Real-Time Auto Asset Detection:** Instantly auto-detects whichever trading pair is active on Quotex (`USD/INR (OTC)`, `USD/EGP (OTC)`, `AUD/NZD (OTC)`, `NZD/CAD (OTC)`, Crypto, or OTC Stocks) directly from the live DOM without manual selection.
+- 🎬 **Cinematic Holographic Laser Scanner:** Sweeps a 4-tier volumetric neon laser beam with horizontal anamorphic lens streaks across the broker's chart.
+- 🏹 **Dead-Center 3D Signal Projection:** Projects a glowing 3D obsidian disc with an arrow, confidence percentage, and live second-by-second countdown **right in the dead-center of the display chart**—completely clear of Quotex's Buy/Sell buttons.
+- ⚙️ **Mini Settings Quick-Launch Button:** A subtle gear icon (`⚙`) attached beside the MHB launcher gives one-click access to the settings panel (thresholds, audio, themes).
+- 🪟 **Freely Draggable Anywhere:** Both the floating launcher widget and the popup card can be dragged freely to any coordinates across your screen.
+- 🛡️ **Zero CSP Network Proxy:** Uses the background service worker proxy to fetch live M1 candlestick feeds across browser Content Security Policy (CSP) barriers without console errors.
 
-| Indicator | Configuration | Weight | Purpose |
+---
+
+## 🧠 Scoring Consensus Engine
+
+SignalScan analyzes 100 historical 1-minute candles and weighs multiple independent technical indicators to formulate a single directional score:
+
+| Indicator | Configuration | Weight | Function & Purpose |
 | :--- | :--- | :---: | :--- |
-| **EMA Cross** | 9 EMA / 21 EMA | **18%** | ট্রেন্ড ডিরেকশন ও মোমেন্টাম ডিটেকশন |
-| **RSI** | 14 Period (Wilder's Smoothing) | **16%** | ওভারবট (>70) ও ওভারসোল্ড (<30) রিভার্সাল |
-| **MACD** | 12, 26, 9 Fast/Slow/Signal | **16%** | হিস্টোগ্রাম ডাইভারজেন্স ও সিগন্যাল ক্রস |
-| **Bollinger Bands** | 20 Period, 2.0 Std Dev | **14%** | ব্যান্ড পেনিট্রেশন ও ভলাটিলিটি স্কুইজ |
-| **Stochastic** | 14, 3, 3 Fast/Slow %K %D | **12%** | ইন-ডিকেড মোমেন্টাম টার্নিং পয়েন্ট |
-| **Price Action** | Pin bar, Engulfing, Hammer | **14%** | ক্যান্ডেলস্টিক প্যাটার্ন কনফার্মেশন |
-| **Trend Consensus** | Multi-timeframe slope | **10%** | ট্রেন্ডের বিরুদ্ধে ফলস সিগন্যাল ফিল্টার |
+| **EMA Cross** | 9 EMA / 21 EMA | **18%** | Primary trend direction, exponential momentum |
+| **RSI** | 14 Period (Wilder's Smoothing) | **16%** | Overbought (>70) & Oversold (<30) reversal detection |
+| **MACD** | 12, 26, 9 Fast/Slow/Signal | **16%** | Convergence/divergence acceleration & histogram crosses |
+| **Bollinger Bands** | 20 Period, 2.0 Std Dev | **14%** | Volatility squeeze and statistical band penetration |
+| **Stochastic** | 14, 3, 3 Fast/Slow %K %D | **12%** | Fast turning-point triggers within intraday trend |
+| **Price Action** | Pin bar, Engulfing, Hammer | **14%** | Candlestick rejection verification at key support/resistance |
+| **Trend Consensus** | Multi-timeframe slope | **10%** | Anti-whipsaw filter against counter-trend false breakouts |
 
-> **নোট:** কনফিডেন্স স্কোর নির্ধারিত থ্রেশহোল্ড (ডিফল্ট: ৭৫%) পার করলেই কেবল **CALL (UP)** বা **PUT (DOWN)** সিগন্যাল লক হয়।
+> **Note:** A signal will only be confirmed as **CALL (UP)** or **PUT (DOWN)** if the cumulative confidence score surpasses the user-defined threshold (default: **75%**).
 
 ---
 
-## 🚀 ইনস্টলেশন গাইড (How to Install)
+## 🚀 Installation Guide
 
-### ১. রিপোজিটরি ক্লোন বা ডাউনলোড করুন:
+### 1. Clone or Download the Repository:
 ```bash
-git clone https://github.com/your-username/signalscan.git
-cd signalscan
+git clone https://github.com/parvezrepository/SignalScan-Quotex-extensions.git
+cd SignalScan-Quotex-extensions
 ```
-*(অথবা GitHub থেকে **Code -> Download ZIP** করে আনজিপ করুন)*
+*(Or click **Code -> Download ZIP** on GitHub and extract the folder).*
 
-### ২. প্রোডাকশন বান্ডেল তৈরি করুন:
-প্রজেক্টে Node.js ইনস্টল করা থাকলে ডিপেন্ডেন্সি ইনস্টল করে বিল্ড রান করুন:
+### 2. Build the Production Bundle (Optional):
+The repository already includes the pre-compiled `content/bundle.js`. If you wish to rebuild after making changes:
 ```bash
 npm install
 node build.js
 ```
-*(`content/bundle.js` স্বয়ংক্রিয়ভাবে অপ্টিমাইজড ও রেডি হয়ে যাবে)*
+*(Creates an optimized, self-contained single-file bundle in seconds).*
 
-### ৩. গুগোল ক্রোমে এক্সটেনশন লোড করুন:
-1. গুগল ক্রোম ব্রাউজার খুলে অ্যাড্রেস বারে যান: `chrome://extensions/`
-2. ওপরের ডানদিকের **Developer mode** টগলটি চালু করুন।
-3. ওপরের বামদিকের **Load unpacked** বাটনে ক্লিক করুন।
-4. এই প্রজেক্টের রুট ফোল্ডারটি (`QX SCAN`) সিলেক্ট করুন।
-5. ব্যস! **SignalScan - Developed by @PARVEZ_MHB** এক্সটেনশনটি ইনস্টল হয়ে যাবে!
+### 3. Load into Google Chrome:
+1. Open Google Chrome and navigate to: `chrome://extensions/`
+2. Enable **Developer mode** toggle in the top-right corner.
+3. Click the **Load unpacked** button in the top-left corner.
+4. Select the project root directory (`QX SCAN` / `SignalScan-Quotex-extensions`).
+5. Done! **SignalScan - Developed by @PARVEZ_MHB** will appear in your extensions list.
 
 ---
 
-## 🎮 ব্যবহার বিধি (How to Use)
+## 🎮 How to Use
 
 ```mermaid
 flowchart LR
-    A["Quotex ওপেন করুন"] --> B["যেকোনো OTC পেয়ার সিলেক্ট করুন"]
-    B --> C["স্বয়ংক্রিয়ভাবে পেয়ার ডিটেক্ট হবে"]
-    C --> D["MHB লোগোতে ক্লিক করুন বা Alt+S"]
-    D --> E["ডিসপ্লেতে সিনে-লেজার স্ক্যান হবে"]
-    E --> F["মাঝখানে ৩ডি CALL/PUT অ্যারো প্রদর্শন"]
+    A["Open Quotex Platform"] --> B["Select Any Currency / OTC Pair"]
+    B --> C["Asset Auto-Detected Instantly"]
+    C --> D["Click MHB Logo or Press Alt+S"]
+    D --> E["Cinematic Full-Chart Laser Scan"]
+    E --> F["3D CALL / PUT Signal Displayed in Center"]
 ```
 
-1. **Quotex-এ যান:** যেকোনো ব্রাউজার ট্যাবে `https://market-qx.info/en/trade` বা আপনার ব্রোকার প্ল্যাটফর্ম ওপেন করুন।
-2. **অ্যাসেট সুইচ করুন:** উপরের ট্যাবে বা সাইডবারে আপনার পছন্দের যেকোনো কারেন্সি পেয়ার সিলেক্ট করুন (যেমন: `USD/INR (OTC)` বা `USD/EGP (OTC)`)।
-3. **MHB লোগোতে ক্লিক করুন:** স্ক্রিনের ভাসমান **MHB লোগোটিতে** ক্লিক করুন (অথবা কিবোর্ডে `Alt + S` চাপুন)।
-4. **স্ক্যান ও রেজাল্ট:** সাথে সাথে নিয়ন লেজার পুরো চার্ট স্ক্যান করে ক্যান্ডেল লক করবে এবং স্ক্রিনের একদম মাঝখানে **CALL ▲** অথবা **PUT ▼** অ্যারো সিগন্যাল ভেসে উঠবে।
-5. **সেটিংস পরিবর্তন:** লোগোর পাশের ছোট **গিয়ার আইকনটিতে (`⚙`)** ক্লিক করে আপনি কনফিডেন্স থ্রেশহোল্ড, সাউন্ড, এবং অ্যাকসেন্ট কালার কাস্টমাইজ করতে পারবেন।
+1. **Open Quotex:** Navigate to `https://market-qx.info/en/trade` or your preferred broker platform.
+2. **Select Asset:** Switch to any currency pair or OTC asset (e.g., `USD/INR (OTC)` or `USD/EGP (OTC)`). The extension automatically detects and aligns with the selected market.
+3. **Click the MHB Logo:** Click the floating circular **MHB logo** button (or press `Alt + S` on your keyboard).
+4. **View Signal:** The holographic laser will scan the display chart, lock onto the current candlestick, and project a 3D **CALL ▲** or **PUT ▼** confirmation badge right in the center of your chart.
+5. **Adjust Settings:** Click the mini gear icon (`⚙`) attached to the MHB logo to adjust confidence threshold, WebAudio cues, or theme colors.
 
 ---
 
-## ⌨️ কিবোর্ড শর্টকাট (Hotkeys)
+## ⌨️ Keyboard Shortcuts
 
-| Shortcut | Action |
+| Shortcut | Description |
 | :--- | :--- |
-| **`Alt + S`** | সাথে সাথে লাইভ মার্কেট স্ক্যান ট্রিগার করা |
+| **`Alt + S`** | Instantly trigger market scan on active tab |
 
 ---
 
-## 📁 প্রজেক্ট ফাইল স্ট্রাকচার (Directory Structure)
+## 📁 Directory Structure
 
 ```
 QX SCAN/
 ├── background/
-│   └── service-worker.js      # ব্যাকগ্রাউন্ড প্রক্সি ফেচ এবং এক্সটেনশন লাইফসাইকেল
+│   └── service-worker.js      # Background fetch proxy & lifecycle manager
 ├── content/
-│   ├── animation.js           # কার্ড ক্যানভাস ৩ডি ক্যান্ডেল ও রাডার অ্যানিমেশন
-│   ├── bundle.js              # প্রোডাকশন কম্পাইল্ড হাই-স্পিড বান্ডেল
-│   ├── chart-scanner.js       # চার্ট ডিসপ্লে ফুল-স্ক্রিন লেজার ও ৩ডি অ্যারো
-│   ├── content.js             # মাস্টার কনটেন্ট স্ক্রিপ্ট ও ডিওএম ওয়াচার
-│   ├── styles.css             # সাইবারপাঙ্ক গ্লাস মরফিজম শ্যাডো ডিওএম স্টাইল
-│   └── ui.js                  # MHB লোগো লঞ্চার, মিনি সেটিংস ও ড্র্যাগেবল ইউআই
+│   ├── animation.js           # 60fps mini-card canvas candlestick & radar animation
+│   ├── bundle.js              # Production-compiled zero-latency IIFE bundle
+│   ├── chart-scanner.js       # Full display chart holographic laser & 3D arrow engine
+│   ├── content.js             # Master content controller & live DOM asset watcher
+│   ├── styles.css             # Cyberpunk glassmorphism Shadow DOM styles
+│   └── ui.js                  # MHB launcher, mini settings & draggable UI widget
 ├── engine/
-│   ├── indicators.js          # EMA, RSI, MACD, Bollinger, Stochastic ম্যাথ
-│   ├── patterns.js            # রিয়েল-টাইম ক্যান্ডেলস্টিক প্যাটার্ন ডিটেক্টর
-│   └── scorer.js              # মাল্টি-ইন্ডিকেটর কনসেনসাস অ্যালগরিদম
+│   ├── indicators.js          # Pure mathematical EMA, RSI, MACD, Bollinger, Stochastic
+│   ├── patterns.js            # Real-time candlestick pattern recognition algorithms
+│   └── scorer.js              # Weighted multi-indicator scoring consensus engine
 ├── icons/
-│   ├── icon16.png             # ক্রোম টুলবার আইকন (MHB)
-│   ├── icon32.png             # ক্রোম উইন্ডো আইকন (MHB)
-│   ├── icon48.png             # এক্সটেনশন ম্যানেজমেন্ট আইকন (MHB)
-│   ├── icon128.png            # ওয়েব স্টোর হাই-রেজ আইকন (MHB)
-│   └── mhb-logo.jpg           # অরিজিনাল MHB ব্র্যান্ড লোগো
+│   ├── icon16.png             # Chrome toolbar icon (MHB)
+│   ├── icon32.png             # Chrome window icon (MHB)
+│   ├── icon48.png             # Extension management icon (MHB)
+│   ├── icon128.png            # Chrome Web Store high-resolution icon (MHB)
+│   └── mhb-logo.jpg           # Original MHB brand logo asset
 ├── providers/
-│   ├── binance.js             # বাইন্যান্স লাইভ ক্রিপ্টো kline প্রোভাইডার
-│   ├── market.js              # ইউনিফাইড মার্কেট ডেটা রাউটার
-│   ├── quotex-api.js          # কোটেক্স লাইভ ওটিসি M1 ক্যান্ডেল ফিড
-│   └── twelvedata.js          # টুয়েলভডাটা রিয়েল ফরেক্স ফলব্যাক ফিড
+│   ├── binance.js             # Binance live crypto kline WebSocket provider
+│   ├── market.js              # Unified market data routing engine
+│   ├── quotex-api.js          # Quotex live OTC M1 candlestick feed
+│   └── twelvedata.js          # TwelveData forex fallback provider
 ├── tests/
-│   └── indicators.test.js     # অটোমেটেড ইউনিট টেস্ট সুইট (6/6 Passing)
+│   └── indicators.test.js     # Automated mathematical unit test suite (6/6 Passing)
 ├── utils/
-│   ├── audio.js               # পিওর সিন্থেসাইজড ওয়েব অডিও সাউন্ড ইফেক্টস
-│   ├── format.js              # কারেন্সি ভ্যালিডেশন ও হাই-প্রিসিশন ডিওএম ডিটেক্টর
-│   └── storage.js             # ক্রোম সিঙ্ক ও লোকাল স্টোরেজ হ্যান্ডলার
-├── build.js                   # ESBuild আল্ট্রা-ফাস্ট প্রোডাকশন বান্ডলার
-├── manifest.json              # ক্রোম এক্সটেনশন কনফিগারেশন (Manifest V3)
-├── package.json               # প্রজেক্ট মেটাডেটা ও স্ক্রিপ্টস
-└── README.md                  # কমপ্লিট ডকুমেন্টেশন ও ইনস্টলেশন গাইড
+│   ├── audio.js               # Synthesized WebAudio lock & reveal sound effects
+│   ├── format.js              # Currency validation & high-precision DOM extractors
+│   └── storage.js             # Chrome sync & local storage persistence handler
+├── build.js                   # ESBuild ultra-fast production packager
+├── manifest.json              # Chrome Extension Manifest V3 configuration
+├── package.json               # Project metadata & npm scripts
+└── README.md                  # Comprehensive English documentation & installation guide
 ```
 
 ---
 
-## 🧪 ইউনিট টেস্টিং (Automated Tests)
+## 🧪 Unit Testing
 
-গাণিতিক নির্ভুলতা নিশ্চিত করতে বিল্ট-ইন টেস্ট রান করুন:
+To verify the mathematical accuracy of all technical indicator calculations, run the built-in test suite:
 ```bash
 npm test
 ```
@@ -174,13 +174,13 @@ npm test
 
 ## 👨‍💻 Developer & Credits
 
-- **Developer:** [parvezrepository](https://github.com/parvezrepository)
+- **Developer:** [@PARVEZ_MHB](https://github.com/PARVEZ_MHB)
+- **Repository:** [SignalScan-Quotex-extensions](https://github.com/parvezrepository/SignalScan-Quotex-extensions)
 - **Project:** SignalScan (MHB Edition)
-- **Platform:** Google Chrome Extension (Manifest V3)
+- **Architecture:** Google Chrome Extension (Manifest V3)
 
 ---
 
-## ⚠️ ডিসক্লেইমার (Disclaimer)
+## ⚠️ Disclaimer
 
-*এই সফটওয়্যারটি শুধুমাত্র শিক্ষামূলক ও প্রযুক্তিগত বিশ্লেষণের উদ্দেশ্যে তৈরি করা হয়েছে। আর্থিক বাজার বা বাইনারি অপশন ট্রেডিংয়ে আর্থিক ঝুঁকি বিদ্যমান। অতীত ফলাফল ভবিষ্যতের সফলতার কোনো নিশ্চয়তা প্রদান করে না। ঝুঁকি বিবেচনা করে ট্রেড করুন।*
-
+*This software is created strictly for educational, analytical, and technical research purposes. Financial trading, including binary options and forex, carries significant capital risk. Past algorithmic performance does not guarantee future results. Always trade responsibly and manage your risk.*
